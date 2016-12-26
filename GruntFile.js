@@ -4,6 +4,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-open');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-clean');
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -27,6 +28,7 @@ module.exports = function (grunt) {
             main: {
                 files: [
                     { expand: true, src: ['img/*'], dest: 'deploy/' },
+                    { expand: true, src: ['css/*'], dest: 'deploy/' },
                     { expand: true, src: ['favicon.png'], dest: 'deploy/' },
                     { expand: true, cwd: 'src/', src: ['index.html'], dest: 'deploy/' },
                 ]
@@ -40,7 +42,8 @@ module.exports = function (grunt) {
             dev: {
                 path: 'http://localhost:8080/index.html'
             }
-        }
+        },
+        clean: ['deploy']
     });
 
     grunt.registerTask('default', ['concat', 'copy', 'connect', 'open', 'watch']);

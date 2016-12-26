@@ -5,9 +5,9 @@ Game.prototype = {
 
     preload: function () {
         this.optionCount = 1;
-        // game.load.script('gameOver', 'src/game/GameOver.js');
-        game.load.image("vermell", "img/vermell.png");
-        game.load.image("groc", "img/groc.png");
+        game.stage.backgroundColor = '#000';
+        // game.load.image("vermell", "img/vermell.png");
+        // game.load.image("groc", "img/groc.png");
     },
 
     create: function () {
@@ -33,7 +33,6 @@ Game.prototype = {
             }
             var maxY = game.height - game.cache.getImage("vermell").height;
             var llocy = game.rnd.integerInRange(game.cache.getImage("vermell").height / 2, maxY);
-            console.log(llocy);
             if ((quin = game.rnd.integerInRange(0, 1)) == 0) {
                 var soldat = soldats.create(llocx, llocy, 'vermell');
                 soldat.tipus = "dolent";
@@ -62,11 +61,9 @@ Game.prototype = {
                 soldat.body.velocity.x = -100 - + game.rnd.integerInRange(0, 50);
             }
 
-            // function onDown(pointer) {
-            // pointer will contain the pointer that
-            // activated this event
-            //    pointer.destroy();
-            // }
+            // Fem que cavalquin...
+            game.add.tween(soldat).to({angle: -3}, 100).to({angle:3}, 100).loop().start();
+
         }
     },
 
