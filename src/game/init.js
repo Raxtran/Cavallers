@@ -1,5 +1,5 @@
 var
-  game = new Phaser.Game(800, 600, Phaser.AUTO, 'game'),
+  game = new Phaser.Game(960, 640, Phaser.AUTO, 'game'),
   Main = function () { },
   gameOptions = {
     playSound: false,
@@ -18,7 +18,7 @@ Main.prototype = {
     game.scale.pageAlignVeritcally = true;
     game.scale.refresh();
 
-    game.load.image('logo', 'img/13c1.jpg');
+    game.load.image('logo', 'img/sir.png');
     // game.load.script('polyfill',   'lib/polyfill.js');
     // game.load.script('utils',   'lib/utils.js');
     game.load.script('splash', 'src/game/Splash.js');

@@ -9,11 +9,12 @@ Splash.prototype = {
     },
 
     loadImages: function () {
-        game.load.image('logo', 'img/13c1.jpg');
+        game.load.image('logo', 'img/sir.png');
     },
 
     init: function () {
-        game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'logo');
+        var sprite = game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'logo');
+        sprite.anchor.setTo(.5, .5);
     },
 
     preload: function () {
