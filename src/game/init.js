@@ -23,17 +23,19 @@ Main.prototype = {
     //    game.scale.refresh();
 
     game.load.image('logo', 'img/sir.png');
+    game.load.image('load', 'img/loading.png');
     // game.load.script('polyfill',   'lib/polyfill.js');
     // game.load.script('utils',   'lib/utils.js');
     game.load.script('splash', 'src/game/Splash.js');
     game.load.script('game', 'src/game/Game.js');
     game.load.script('gameover', 'src/game/GameOver.js');
     game.load.script('preload', 'src/game/Preload.js');
+    game.load.script('gamemenu', 'src/game/GameMenu.js');
   },
 
   addGameStates: function () {
 
-    // game.state.add("GameMenu", GameMenu);
+    game.state.add("GameMenu", GameMenu);
     game.state.add('Game', Game);
     game.state.add("GameOver", GameOver);
     game.state.add('Splash', Splash);
