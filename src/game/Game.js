@@ -79,6 +79,7 @@ Game.prototype = {
             game.add.tween(soldat).to({angle: -3}, 100, Phaser.Easing.Bounce.InOut)
                                   .to({angle:3}, 100, Phaser.Easing.Bounce.Out)
                                   .loop().start();
+            soldats.sort('y', Phaser.Group.SORT_ASCENDING)
 
         }
     },
